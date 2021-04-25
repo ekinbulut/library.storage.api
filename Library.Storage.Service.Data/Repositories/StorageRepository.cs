@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Library.Storage.Service.Data.Entities;
@@ -29,15 +30,14 @@ namespace Library.Storage.Service.Data.Repositories
             var collection = _database.GetCollection<EStorage>(_collectionName);
 
             collection.ReplaceOneAsync(x => x.Id.Equals(entity.Id), entity, new UpdateOptions
-                                                                            {
-                                                                                IsUpsert = true
-                                                                            });
+            {
+                IsUpsert = true
+            });
         }
 
         public void Insert(EStorage entity)
         {
             var collection = _database.GetCollection<EStorage>(_collectionName);
-
             collection.InsertOne(entity);
         }
 

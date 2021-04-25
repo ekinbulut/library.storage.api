@@ -19,6 +19,6 @@ namespace Library.Storage.Service.Data.Entities
         public string Name { get; set; }
         public int[] RackNumber { get; set; }
         public DateTime CreateDateTime { get; set; } = DateTime.Now;
-        public DateTime? UpdateDateTime { get; set; }
+        public DateTime? UpdateDateTime { get; set; } = DateTime.Now;
     }
 }
